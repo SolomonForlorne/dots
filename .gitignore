@@ -1,0 +1,17 @@
+dconf
+Electron/
+go/
+gtk-3.0/
+htop/
+kde.org/
+light/
+nvim.backup/
+nvim.backup.backup/
+nvim.bak/
+nwg-displays/
+obsidian/
+procps/
+pulse/
+session/
+yay/
+dolphinrc

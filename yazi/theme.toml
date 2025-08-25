@@ -1,0 +1,28 @@
+[flavor]
+dark = "tokyo-night"
+
+#[mgr]
+#cwd = { fg = "#000000", bg = "#f7768e" }
+#hovered = { fg = "#f7768e", bold = true}
+#preview_hovered = { fg = "#f7768e", bold = true}
+#find_keyword = { underline = true }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
