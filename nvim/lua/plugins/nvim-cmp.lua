@@ -21,7 +21,7 @@ return {
     },
     config = function()
         local cmp = require("cmp")
-        -- local luasnip = require("luasnip")
+        local luasnip = require("luasnip")
         local has_luasnip, luasnip = pcall(require, 'luasnip')
         local lspkind = require("lspkind")
         local colorizer = require("tailwindcss-colorizer-cmp").formatter

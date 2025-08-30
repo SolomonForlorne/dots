@@ -8,11 +8,11 @@ return {
 
 		-- if Eslint error configuration not found : change MasonInstall eslint@version or npm i -g eslint at a specific version
 		lint.linters_by_ft = {
-			javascript = {"biomejs"},
-			typescript = {"biomejs"},
-			javascriptreact = {"biomejs"},
-			typescriptreact = {"biomejs"},
-			svelte = { "biomejs" },
+            --javascript = {"biomejs"},
+			--typescript = {"biomejs"},
+			--javascriptreact = {"biomejs"},
+			--typescriptreact = {"biomejs"},
+			--svelte = { "biomejs" },
 			python = { "pylint" },
             cpp = {"cpplint"},
 		}

@@ -44,24 +44,24 @@ return {
                 },
                 layouts = {
                     select = {
-                            preview = false,
-                            layout = {
-                                backdrop = false,
-                                width = 0.6,
-                                min_width = 80,
-                                height = 0.4,
-                                min_height = 10,
-                                box = "vertical",
-                                border = "rounded",
-                                title = "{title}",
-                                title_pos = "center",
-                                { win = "input", height = 1, border = "bottom" },
-                                { win = "list", border = "none" },
-                                { win = "preview", title = "{preview}", width = 0.6, height = 0.4, border = "top" },
+                        preview = false,
+                        layout = {
+                            backdrop = false,
+                            width = 0.6,
+                            min_width = 80,
+                            height = 0.4,
+                            min_height = 10,
+                            box = "vertical",
+                            border = "rounded",
+                            title = "{title}",
+                            title_pos = "center",
+                            { win = "input",   height = 1,          border = "bottom" },
+                            { win = "list",    border = "none" },
+                            { win = "preview", title = "{preview}", width = 0.6,      height = 0.4, border = "top" },
                         }
                     },
                     telescope = {
-                        reverse = true, -- set to false for search bar to be on top 
+                        reverse = true, -- set to false for search bar to be on top
                         layout = {
                             box = "horizontal",
                             backdrop = false,
@@ -70,8 +70,8 @@ return {
                             border = "none",
                             {
                                 box = "vertical",
-                                { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
-                                { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+                                { win = "list",  title = " Results ", title_pos = "center", border = "rounded" },
+                                { win = "input", height = 1,          border = "rounded",   title = "{title} {live} {flags}", title_pos = "center" },
                             },
                             {
                                 win = "preview",
@@ -95,7 +95,7 @@ return {
                             { win = "input", height = 1, border = "bottom" },
                             {
                                 box = "horizontal",
-                                { win = "list", border = "none" },
+                                { win = "list",    border = "none" },
                                 { win = "preview", title = "{preview}", width = 0.5, border = "left" },
                             },
                         },
@@ -105,7 +105,7 @@ return {
             image = {
                 enabled = true,
                 doc = {
-                    float = true, -- show image on cursor hover
+                    float = true,   -- show image on cursor hover
                     inline = false, -- show image inline
                     max_width = 50,
                     max_height = 30,
@@ -117,46 +117,60 @@ return {
                     notify = true,
                     command = "magick"
                 },
-                img_dirs = { "img", "images", "assets", "static", "public", "media", "attachments","Archives/All-Vault-Images/", "~/Library", "~/Downloads" },
+                img_dirs = { "img", "images", "assets", "static", "public", "media", "attachments", "Archives/All-Vault-Images/", "~/Library", "~/Downloads" },
             },
-            dashboard = {
-                enabled = true,
-                sections = {
-                    { section = "header" },
-                    { section = "keys", gap = 1, padding = 1 },
-                    { section = "startup" },
-                    {
-                        section = "terminal",
-                        cmd = "ascii-image-converter ~/Pictures/August_Nvim.jpg -C ",
-                        random = 0,
-                        pane = 2,
-                        indent = 0,
-                        width = 59,
-                        height = 45,
-                    },
-                },
-            },
+            -- dashboard = {
+            --     enabled = true,
+            --     keys = {
+            --         { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+            --         { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+            --         { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+            --         { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            --         { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+            --         { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+            --         { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
+            --         { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+            --         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+            --
+            --     },
+            --     sections = {
+            --         { section = "header" },
+            --         -- {
+            --         --     section = "keys"
+            --         -- },
+            --         { section = "startup" },
+            --         {
+            --             section = "terminal",
+            --             cmd = "ascii-image-converter ~/Pictures/August_Nvim.jpg -C ",
+            --             random = 0,
+            --             pane = 2,
+            --             indent = 0,
+            --             width = 59,
+            --             height = 45,
+            --         },
+            --     },
+            -- },
         },
         -- NOTE: Keymaps
         keys = {
-            { "<leader>lg", function() require("snacks").lazygit() end, desc = "Lazygit" },
-            { "<leader>gl", function() require("snacks").lazygit.log() end, desc = "Lazygit Logs" },
-            { "<leader>rN", function() require("snacks").rename.rename_file() end, desc = "Fast Rename Current File" },
-            { "<leader>dB", function() require("snacks").bufdelete() end, desc = "Delete or Close Buffer  (Confirm)" },
+            { "<leader>lg",  function() require("snacks").lazygit() end,                                                  desc = "Lazygit" },
+            { "<leader>gl",  function() require("snacks").lazygit.log() end,                                              desc = "Lazygit Logs" },
+            { "<leader>rN",  function() require("snacks").rename.rename_file() end,                                       desc = "Fast Rename Current File" },
+            { "<leader>dB",  function() require("snacks").bufdelete() end,                                                desc = "Delete or Close Buffer  (Confirm)" },
 
             -- Snacks Picker
-            { "<leader>pf", function() require("snacks").picker.files() end, desc = "Find Files (Snacks Picker)" },
-            { "<leader>pc", function() require("snacks").picker.files({ cwd = "~/dotfiles/nvim/.config/nvim/lua" }) end, desc = "Find Config File" },
-            { "<leader>ps", function() require("snacks").picker.grep() end, desc = "Grep word" },
-            { "<leader>pws", function() require("snacks").picker.grep_word() end, desc = "Search Visual selection or Word", mode = { "n", "x" } },
-            { "<leader>pk", function() require("snacks").picker.keymaps({ layout = "ivy" }) end, desc = "Search Keymaps (Snacks Picker)" },
+            { "<leader>pf",  function() require("snacks").picker.files() end,                                             desc = "Find Files (Snacks Picker)" },
+            { "<leader>pc",  function() require("snacks").picker.files({ cwd = "~/dotfiles/nvim/.config/nvim/lua" }) end, desc = "Find Config File" },
+            { "<leader>ps",  function() require("snacks").picker.grep() end,                                              desc = "Grep word" },
+            { "<leader>pws", function() require("snacks").picker.grep_word() end,                                         desc = "Search Visual selection or Word",  mode = { "n", "x" } },
+            { "<leader>pk",  function() require("snacks").picker.keymaps({ layout = "ivy" }) end,                         desc = "Search Keymaps (Snacks Picker)" },
 
             -- Git Stuff
-            { "<leader>gbr", function() require("snacks").picker.git_branches({ layout = "select" }) end, desc = "Pick and Switch Git Branches" },
+            { "<leader>gbr", function() require("snacks").picker.git_branches({ layout = "select" }) end,                 desc = "Pick and Switch Git Branches" },
 
             -- Other Utils
-            { "<leader>th" , function() require("snacks").picker.colorschemes({ layout = "ivy" }) end, desc = "Pick Color Schemes"},
-            { "<leader>vh", function() require("snacks").picker.help() end, desc = "Help Pages" },
+            { "<leader>th",  function() require("snacks").picker.colorschemes({ layout = "ivy" }) end,                    desc = "Pick Color Schemes" },
+            { "<leader>vh",  function() require("snacks").picker.help() end,                                              desc = "Help Pages" },
         }
     },
     -- NOTE: todo comments w/ snacks
@@ -165,7 +179,7 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         optional = true,
         keys = {
-            { "<leader>pt", function() require("snacks").picker.todo_comments() end, desc = "Todo" },
+            { "<leader>pt", function() require("snacks").picker.todo_comments() end,                                          desc = "Todo" },
             { "<leader>pT", function() require("snacks").picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
         },
     }
